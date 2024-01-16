@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/home', function () {
-        return view('home');
-    })->name('home');
+    Route::get('/category', function () {
+        return view('admin/category/create');
+    })->name('category');
+    Route::resource('categories', CategoryController::class);
 });
