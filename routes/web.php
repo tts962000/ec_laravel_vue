@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SubCatController;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -29,4 +30,5 @@ Route::middleware([
         return view('admin/category/create');
     })->name('category');
     Route::resource('categories', CategoryController::class);
+    Route::resource('category.subcat',SubCatController::class)->shallow();; //important
 });

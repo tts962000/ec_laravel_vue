@@ -3,10 +3,10 @@
 @section('content')
     <div class="container">
         <div class="col-md-8 offset-md-2">
-            <form action="{{route('categories.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('category.subcat.store',$cat->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Create Shop</label>
+                  <label for="exampleInputEmail1" class="form-label">Create Food Category</label>
                   <input type="text" name="name" class="form-control"  aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
