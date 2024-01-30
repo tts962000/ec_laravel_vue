@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SubCatController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -33,5 +34,5 @@ Route::middleware([
     Route::resource('categories', CategoryController::class);
     Route::resource('category.subcat',SubCatController::class)->shallow();//important
     Route::resource('tag', TagController::class);
-
+    Route::resource('product', ProductController::class);
 });
