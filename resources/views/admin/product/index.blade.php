@@ -33,15 +33,7 @@
                             <button class="btn btn-danger my-2" type="submit">Delete</button>
                         </form>
                     </td>
-                    {{-- <td scope="row">
-                        <a class="btn btn-primary my-2" href="{{route('categories.edit',$item->id)}}">Edit</a>
-                        <form class="d-inline" action="{{route('categories.destroy',$item->id)}}" method="POST">
-                            @csrf
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button class="btn btn-danger my-2" type="submit">Delete</button>
-                        </form>
-                        <a href="{{route('category.subcat.index',$item->id)}}"><i class="fa-solid fs-4 fa-list" style="color: #FFD43B;"></i></a>
-                    </td> --}}
+
                   </tr>
                   @endforeach
                 </tbody>
