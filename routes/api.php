@@ -23,6 +23,16 @@ Route::get('/cats',[ApiController::class,'cats']);
 Route::get('/subcats',[ApiController::class,'subcats']);
 Route::get('/products',[ApiController::class,'products']);
 Route::get('/tags',[ApiController::class,'tags']);
+Route::get('/subcats/{id}',[ApiController::class,'sbc']);
+Route::get('/pbc/{id}',[ApiController::class,'pbc']);
+Route::get('/pbt/{id}',[ApiController::class,'pbt']);
+Route::get('/cbt/{id}',[ApiController::class,'cbt']);
+
 Route::middleware(['jwt.auth'])->group(function () {
     Route::get('/check',[ApiController::class,'check']);
+    Route::post('/ordersubmit',[ApiController::class,'submitOrders']);
+    Route::get('/viewOrders',[ApiController::class,'viewOrders']);
+    Route::get('/userOrderDetail/{id}',[ApiController::class,'userOrderDetail']);
+    Route::get('/userOrderVouncher/{id}',[ApiCOntroller::class,'userOrderVouncher']);
+    Route::get('/userOrders/{id}',[ApiController::class,'userOrders']);
 });

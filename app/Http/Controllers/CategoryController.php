@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\CategoryCreateRequest;
@@ -14,6 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories=Category::all();
+        // $tags=Tag::all();
         return view('admin.category.index',compact('categories'));
     }
 
@@ -22,7 +24,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        $tags=Tag::all();
+        return view('admin.category.create',compact('tags'));
+
     }
 
     /**
@@ -35,6 +39,7 @@ class CategoryController extends Controller
         $file->move(public_path().'/images',$file_name);
         $category=new Category();
         $category->name=$request->name;
+        $category->tag_id=$request->tag_id;
         $category->image=$file_name;
         if($category->save()){
             return redirect()->route('categories.index');

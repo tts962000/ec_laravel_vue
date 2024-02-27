@@ -34,6 +34,7 @@
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="{{route('tag.index')}}">Tags</a></li>
                       <li><a class="dropdown-item" href="{{route('product.index')}}">Products</a></li>
+                      <li><a class="dropdown-item" href="{{route('#allOrders')}}">Orders</a></li>
                       <li>
                         <form action="{{route('logout')}}" method="POST">
                             @csrf
